@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost:4000/register" method="get">  
+       <!-- Here by default form action can send data through the fttps file transfer protocal to send th data but we can change this data and use the https...etc our local host server port to accpet the data... and important point is that where the data is present on the backend in the req.query prop... -->
+    <h1>Get Response</h1>
+    
+    <input type="text" placeholder="Enter username" name="user">
+    
+    <input type="password" placeholder="Enter your password" name="password">
+    <input type="submit" value="submit">
+  </form>
+  <br><hr>
+  <form action="http://localhost:4000/register" method="POST">
+  <!-- Here in the post method we will handle these responce in two methods and its not present in the request.query but  it has own body where we send different types of responses in its own body here we can handle two types of requests  -->
+    <h1>POST Response</h1>
+    <label for="name"">Your name:</label>
+    <input type="text" name="name">
+    <label for="password">Enter your password:</label>
+    <input type="password">
+    <input type="submit" value="submit">
+  </form>
+</body>
+</html>

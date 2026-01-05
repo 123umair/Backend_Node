@@ -1,0 +1,12 @@
+Process (object) in node?
+This object provides the information about node,and control over, the 
+current Node.js process.
+We can access any information related to the memory,current version of node,current directory etc.
+If u want to you these process object then u will go to the node evironment where if u want to enter the node environment 
+then u will first write the command in the cmd 'node' where open the node environment and then write the 'process'
+and it will give the all the properties inside these objects like, process.release,process.cwd() etc...
+
+
+what is process.argv?
+process.argv is special property inside the process object where return an array containning the command-line arguments 
+passed when the Node.js process was launched.

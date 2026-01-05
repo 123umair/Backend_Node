@@ -1,0 +1,15 @@
+{
+  "name": "p1",
+  "version": "1.0.0",
+  "description": "My project",
+  "license": "ISC",
+  "author": "Umair khan",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "nothing"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

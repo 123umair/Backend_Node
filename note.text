@@ -1,0 +1,53 @@
+🔍 Corrected + Clear Version (Best Interview Style)
+What is a Server?
+
+A server fulfills the request of a client.
+The client sends a request to the server, and the server processes it and sends a response back.
+
+What is Node.js?
+
+Node.js is not a network model — it is a runtime environment that allows JavaScript to run outside the browser.
+It is built on Google’s V8 engine (written in C++), and a JS wrapper makes it possible to run JavaScript as server-side code.
+
+So, Node.js takes your JavaScript code ➜ converts it to machine code using the V8 engine ➜ runs it on the server.
+This whole process is what Node.js does.
+
+What is Express.js?
+
+We can use Node.js without Express, but Express can’t be used without Node.js.
+Node.js provides core modules like http, but writing servers directly with http is difficult and lengthy.
+So Express.js is used to simplify server creation.
+It uses Node’s http module internally, but gives us easy methods, routing, middleware, etc.
+
+🧠 What is Runtime Environment?
+
+Runtime Environment = Woh jagah + system jahan program run ho sakta hai.
+
+Mtlb code execute hone ke liye jo environment / system chahiye hota hai — usko runtime environment kehte hain.
+
+✔️ Example:
+
+Java run karna ho → JRE (Java Runtime Environment) chahiye
+
+Python run karna ho → Python Interpreter chahiye
+
+JavaScript normally sirf browser me run hota tha → Browser hi uska runtime environment hota tha
+
+💡 JavaScript Outside the Browser? — How?
+
+Pehle JavaScript sirf browser ke andar kaam karti thi.
+Kyuki browser me JavaScript Engine (like V8, SpiderMonkey) hota hai jo JS ko run karta hai.
+
+Lekin Node.js ne ye badal diya.
+Node.js ne Google V8 engine ko browser se nikal ke computer ke operating system pe run kar diya
+➡️ Now JavaScript can run like a normal programming language, without any browser.
+
+📌 In simple words:
+
+            Before Node.js	                                 After Node.js
+
+    JavaScript sirf browser me run hoti thi	            JavaScript computer/server par run ho sakti hai
+
+        Browser = Runtime Environment	                        Node.js = Runtime Environment
+
+        JS was only for frontend	                                Now JS can be used for backend also.
