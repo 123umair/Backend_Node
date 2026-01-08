@@ -1,1 +1,0 @@
-// Here now we are working on the Restfull api with reactjs frontend not with ejs
