@@ -1,36 +1,47 @@
-import { useState, useEffect } from 'react'
-
+import { useState, useEffect } from "react";
+import axios from "axios";
 import './App.css'
-import axios from 'axios'
-
 function App() {
-  const [apidata, setApiData] = useState([])
-  const url = 'http://localhost:4000/'
+  const [apidata, setApiData] = useState([]);
+  const url = "http://localhost:4000/";
 
   const getData = async () => {
-    const response = await axios.get(url)
-    const data = response.data.posts
-    setApiData(data)
-
-  }
+    const response = await axios.get(url);
+    setApiData(response.data.posts);
+  };
 
   useEffect(() => {
     getData();
   }, []);
 
   return (
-    <>
-      <h1> Quora Posts </h1>
-      <h2>This is post data</h2>
-      {apidata.map(( data , index) => {
-      return   (<div key={index}>
-          <h3 key={index}>{data.username}</h3>
-          <h3>{data.content}</h3>
+    <div className="min-h-screen bg-gray-100 p-6">
+      {/* Heading */}
+      <h1 className="text-4xl font-bold text-center text-red-950 mb-2">
+        Quora Posts
+      </h1>
+      <h2 className="text-center text-gray-600 mb-8">
+        This is post data
+      </h2>
 
-        </div>)
-      })}
-    </>
-  )
+      {/* Posts */}
+      <div className="max-w-3xl mx-auto space-y-6">
+        {apidata.map((data, index) => (
+          <div
+            key={index}
+            className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
+          >
+            <h3 className="text-lg font-semibold text-red-950 mb-2">
+              @{data.username}
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              {data.content}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
