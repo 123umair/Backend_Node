@@ -3,6 +3,7 @@ import cors from "cors";
 
 const app = express();
 const port = 4000;
+app.use(express.urlencoded({ extended: true }));
 
 let posts = [
   {
@@ -26,6 +27,10 @@ app.use(cors({
 app.get("/", (req, res) => {
   res.json({ posts });
 });
+
+app.get('/posts',(req,res) => {
+  console.log(req.body)
+})
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
