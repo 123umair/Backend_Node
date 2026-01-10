@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 });
 
 app.get('/posts',(req,res) => {
-  console.log(req.body)
+  console.log(req)
 })
 
 app.listen(port, () => {
