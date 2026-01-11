@@ -9,7 +9,7 @@ function CreatePost() {
         </h1>
 
         {/* Form */}
-        <form className="space-y-4"  action="http://localhost:4000/posts" method='POST '>
+        <form className="space-y-4" action="http://localhost:4000/posts" method='post'>
           <input
             type="text"
             placeholder="enter username"
@@ -25,7 +25,7 @@ function CreatePost() {
           ></textarea>
 
           <button
-            type="submit"
+            type="Submit"
             className="w-full bg-red-950 text-white py-3 rounded-lg hover:bg-red-900 transition"
           >
             Post

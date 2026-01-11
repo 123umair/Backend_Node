@@ -28,8 +28,8 @@ app.get("/", (req, res) => {
   res.json({ posts });
 });
 
-app.get('/posts',(req,res) => {
-  console.log(req)
+app.post('/posts',(req,res) => {
+  console.log(req.body,"body")
 })
 
 app.listen(port, () => {
