@@ -6,18 +6,7 @@ const port = 4000;
 app.use(express.urlencoded({ extended: true }));
 
 let posts = [
-  {
-    username: "Umair khan",
-    content: "Focus on your goal"
-  },
-  {
-    username: "Fahad",
-    content: "I'm learning Express.js"
-  },
-  {
-    username: "Filipe",
-    content: "Project Manager"
-  }
+  
 ];
 
 app.use(cors({
@@ -32,7 +21,7 @@ app.post('/posts',(req,res) => {
   console.log(req.body,"body")
   const {username,content} = req.body
   posts.push({username,content})
-  res.redirect('/')
+  res.redirect("http://localhost:5173")
 
 })
 
