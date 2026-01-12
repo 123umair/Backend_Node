@@ -30,6 +30,10 @@ app.get("/", (req, res) => {
 
 app.post('/posts',(req,res) => {
   console.log(req.body,"body")
+  const {username,content} = req.body
+  posts.push({username,content})
+  res.redirect('/')
+
 })
 
 app.listen(port, () => {
