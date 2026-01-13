@@ -24,6 +24,16 @@ app.post('/posts',(req,res) => {
   res.redirect("http://localhost:5173")
 
 })
+app.post('/posts/:id',(req,res) => {
+  console.log(req.body,"body")
+  const {id,username,content} = req.body
+  console.log(req.body,'id and posts')
+  posts.push({id,username,content})
+
+  res.redirect("http://localhost:5173")
+
+})
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);

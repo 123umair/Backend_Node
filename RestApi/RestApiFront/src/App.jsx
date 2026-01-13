@@ -39,9 +39,13 @@ function App() {
                 <h3 className="text-lg font-semibold text-red-950 mb-1">
                   @{data.username}
                 </h3>
+                <div className="flex justify-between">
+                  
                 <p className="text-gray-700 leading-relaxed">
                   {data.content}
                 </p>
+                <a href="/detail" className="text-blue-600">detail</a>
+                </div>
               </div>
             ))}
           </div>
