@@ -71,7 +71,7 @@ function App() {
           />
 
           {/* DETAIL PAGE */}
-          <Route path="/detail" element={<Detail />} />
+          <Route path="/Detail" element={<Detail />} />
 
         </Routes>
       </div>

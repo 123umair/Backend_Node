@@ -19,18 +19,15 @@ app.get("/", (req, res) => {
 
 app.post('/posts',(req,res) => {
   console.log(req.body,"body")
-  const {username,content} = req.body
-  posts.push({username,content})
+  const {id,username,content} = req.body
+  posts.push({id,username,content})
   res.redirect("http://localhost:5173")
 
 })
-app.post('/posts/:id',(req,res) => {
-  console.log(req.body,"body")
-  const {id,username,content} = req.body
-  console.log(req.body,'id and posts')
-  posts.push({id,username,content})
-
-  res.redirect("http://localhost:5173/detail")
+app.get('/posts/:id',(req,res) => {
+  const {id} = req.params
+  let post = posts.find((p) => id === p.id)
+  res.json({post})
 
 })
 
