@@ -30,7 +30,7 @@ app.post('/posts/:id',(req,res) => {
   console.log(req.body,'id and posts')
   posts.push({id,username,content})
 
-  res.redirect("http://localhost:5173")
+  res.redirect("http://localhost:5173/detail")
 
 })
 
