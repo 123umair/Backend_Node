@@ -19,6 +19,8 @@ function App() {
     getData();
   }, []);
 
+  
+
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-gray-300 px-4 py-6 rounded-2xl">
@@ -71,7 +73,7 @@ function App() {
           />
 
           {/* DETAIL PAGE */}
-          <Route path="/Detail" element={<Detail />} />
+          <Route path="/detail" element={<Detail />} />
 
         </Routes>
       </div>

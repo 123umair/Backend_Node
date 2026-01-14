@@ -24,9 +24,9 @@ app.post('/posts',(req,res) => {
   res.redirect("http://localhost:5173")
 
 })
-app.get('/posts/:id',(req,res) => {
+app.get(`/posts/:id`,(req,res) => {
   const {id} = req.params
-  let post = posts.find((p) => id === p.id)
+  let post = posts.find((p) => id == p.id)
   res.json({post})
 
 })
