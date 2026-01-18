@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.post('/posts',(req,res) => {
-  console.log(req.body,"body")
+
   const {id,username,content} = req.body
   posts.push({id,username,content})
   res.redirect("http://localhost:5173")
