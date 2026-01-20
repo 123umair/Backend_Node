@@ -10,10 +10,10 @@ function CreatePost() {
 
         {/* Form */}
         <form className="space-y-4" action="http://localhost:4000/posts" method='post'>
-          <input type="text"
+          {/* <input type="text"
             placeholder="Enter your id"
             name="id"
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-900" />
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-900" /> */}
 
           <input
             type="text"

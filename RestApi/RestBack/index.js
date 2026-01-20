@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-
+import { v4 as uuidv4 } from 'uuid';
 const app = express();
 const port = 4000;
 let posts = [];
@@ -19,8 +19,8 @@ app.get("/", (req, res) => {
 });
 
 app.post('/posts',(req,res) => {
-  
-  const {id,username,content} = req.body
+  let id = uuidv4()
+  const {username,content} = req.body
   posts.push({id,username,content})
   res.redirect("http://localhost:5173")
   
