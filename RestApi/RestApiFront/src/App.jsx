@@ -52,7 +52,7 @@ function App() {
 
                           {/* ✅ Link */}
                           <Link
-                            to={`/detail/${data.id}`}
+                            to={`/detail/${data.id}`} //  to is a point to this route ... /detial/:id here goes the post id here to the backend node 
                             className="text-blue-600 hover:text-blue-700 hover:font-semibold underline"
                           >
                             detail
