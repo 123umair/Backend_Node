@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import CreatePost from "./Component/CreatePost";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Detail from "./Component/Detail";
+import Detail from "./Component/detail";
 import './App.css'
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
     getData();
   }, []);
 
-  
+
 
   return (
     <BrowserRouter>
@@ -52,7 +52,7 @@ function App() {
 
                           {/* ✅ Link */}
                           <Link
-                            to="/detail"
+                            to={`/detail/${data.id}`}
                             className="text-blue-600 hover:text-blue-700 hover:font-semibold underline"
                           >
                             detail
@@ -73,7 +73,7 @@ function App() {
           />
 
           {/* DETAIL PAGE */}
-          <Route path="/detail" element={<Detail />} />
+          <Route path={`/detail/:id`} element={<Detail />} />
 
         </Routes>
       </div>
