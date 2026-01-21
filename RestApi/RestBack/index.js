@@ -33,6 +33,11 @@ app.get(`/posts/:id`,(req,res) => {
   
 })
 
+app.patch('/posts/:id/edit',(req,res) => {
+  //now here i will added the content
+
+})
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
