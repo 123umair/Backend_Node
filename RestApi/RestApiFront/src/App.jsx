@@ -5,6 +5,7 @@ import CreatePost from "./Component/CreatePost";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Detail from "./Component/detail";
 import './App.css'
+import { Editpost } from "./Component/Editpost";
 
 function App() {
   const [apidata, setApiData] = useState([]);
@@ -47,16 +48,25 @@ function App() {
                       >
                         <h3 className="font-semibold">@{data.username}</h3>
 
-                        <div className="flex justify-between">
+                        <div className="flex flex-col">
                           <p>{data.content}</p>
 
-                          {/* ✅ Link */}
+                         <div className="flex flex-start gap-3 ">
+                           {/* ✅ Link */}
                           <Link
                             to={`/detail/${data.id}`} //  to is a point to this route ... /detial/:id here goes the post id here to the backend node 
                             className="text-blue-600 hover:text-blue-700 hover:font-semibold underline"
                           >
                             detail
                           </Link>
+                           {/* ✅ Link */}
+                          <Link
+                            to={`/detail/${data.id}/edits`} //  to is a point to this route ... /detial/:id here goes the post id here to the backend node 
+                            className="text-blue-600 hover:text-blue-700 hover:font-semibold underline"
+                          >
+                            Edit
+                          </Link>
+                         </div>
                         </div>
                       </div>
                     ))}
@@ -74,7 +84,8 @@ function App() {
 
           {/* DETAIL PAGE */}
           <Route path={`/detail/:id`} element={<Detail />} />
-
+          <Route path={`/detail/:id/edits`} element={<Editpost />} />
+          
         </Routes>
       </div>
     </BrowserRouter>
