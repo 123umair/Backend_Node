@@ -84,7 +84,7 @@ function App() {
 
           {/* DETAIL PAGE */}
           <Route path={`/detail/:id`} element={<Detail />} />
-          <Route path={`/detail/:id/edits`} element={<Editpost />} />
+          <Route path={`/detail/:id/edit`} element={<Editpost />} />
           
         </Routes>
       </div>

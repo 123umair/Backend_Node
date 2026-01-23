@@ -33,8 +33,11 @@ app.get(`/posts/:id`,(req,res) => {
   
 })
 
-app.patch('/posts/:id/edit',(req,res) => {
-  //now here i will added the content
+app.get('/posts/:id/edit',(req,res) => {
+let { id } = req.params
+let post = posts.find((p) => id == p.id)
+console.log(post,'this is edit post')
+res.json({post})
 
 })
 
