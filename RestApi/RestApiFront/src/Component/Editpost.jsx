@@ -27,7 +27,6 @@ export const Editpost = () => {
   if (!edit) {
     return <p className="p-10">loading....</p>
   }
-
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
 
@@ -41,7 +40,7 @@ export const Editpost = () => {
 
 
         {/* Form */}
-        <form className="space-y-5">
+        <form className="space-y-5" action="http://localhost:4000/posts" method="post">
 
           {/* Username (optional) */}
           <div>
