@@ -20,7 +20,17 @@ function App() {
     getData();
   }, []);
 
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:4000/posts/${id}`);
+      setApiData(prev =>
+        prev.filter(post => post.id !== id)
+      );
+    } catch (err) {
+      console.log(err)
+    }
 
+  }
 
   return (
     <BrowserRouter>
@@ -51,22 +61,28 @@ function App() {
                         <div className="flex flex-col">
                           <p>{data.content}</p>
 
-                         <div className="flex flex-start gap-3 ">
-                           {/* ✅ Link */}
-                          <Link
-                            to={`/detail/${data.id}`} //  to is a point to this route ... /detial/:id here goes the post id here to the backend node 
-                            className="text-blue-600 hover:text-blue-700 hover:font-semibold underline"
-                          >
-                            detail
-                          </Link>
-                           {/* ✅ Link */}
-                          <Link
-                            to={`/detail/${data.id}/edits`} //  to is a point to this route ... /detial/:id here goes the post id here to the backend node 
-                            className="text-blue-600 hover:text-blue-700 hover:font-semibold underline"
-                          >
-                            Edit
-                          </Link>
-                         </div>
+                          <div className="flex flex-start gap-3 ">
+                            {/* ✅ Link */}
+                            <Link
+                              to={`/detail/${data.id}`} //  to is a point to this route ... /detial/:id here goes the post id here to the backend node 
+                              className="text-blue-600 hover:text-blue-700 hover:font-semibold underline"
+                            >
+                              detail
+                            </Link>
+                            {/* ✅ Link */}
+                            <Link
+                              to={`/detail/${data.id}/edits`} //  to is a point to this route ... /detial/:id here goes the post id here to the backend node 
+                              className="text-blue-600 hover:text-blue-700 hover:font-semibold underline"
+                            >
+                              Edit
+                            </Link>
+                            <button
+                              onClick={() => handleDelete(data.id)}
+                              className="bg-red-400 hover:bg-red-500 px-3 py-1 rounded text-white"
+                            >
+                              delete
+                            </button>
+                          </div>
                         </div>
                       </div>
                     ))}
@@ -85,7 +101,7 @@ function App() {
           {/* DETAIL PAGE */}
           <Route path={`/detail/:id`} element={<Detail />} />
           <Route path={`/detail/:id/edit`} element={<Editpost />} />
-          
+
         </Routes>
       </div>
     </BrowserRouter>

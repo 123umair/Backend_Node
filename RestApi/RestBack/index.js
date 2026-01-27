@@ -58,6 +58,21 @@ app.patch("/posts/:id/edit", (req, res) => {
   res.json({ post });
 });
 
+app.delete("/posts/:id", (req, res) => {
+  const { id } = req.params;
+
+  const prevLength = posts.length;
+
+  posts = posts.filter(post => post.id !== id);
+
+  if (posts.length === prevLength) {
+    return res.status(404).json({ message: "Post not found" });
+  }
+
+  res.json({ message: "Post deleted successfully" });
+});
+
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
