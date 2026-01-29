@@ -27,3 +27,13 @@ const userSchema = mongoose.Schema({
 const User = mongoose.model("User",userSchema)
 // after we can executed these code a collection is created in a mongodb with minimal changes the Collection name "User" can change a plural and to normal text "users" 
 const Employee = mongoose.model("Employee",userSchema) //employees colleciton name created 
+
+
+// now here we can run  one command InsetMany that inser a multiple documents
+User.insertMany([
+    { name:"Tony", email:"tony@gmail.com", age:50},
+    { name:"UK", email:"uk@gmail.com", age:40},
+    { name:"MUK", email:"muk@gmail.com", age:30}
+]).then((data) => {
+    console.log(data)
+})
