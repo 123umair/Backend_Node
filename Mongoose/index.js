@@ -37,3 +37,5 @@ User.insertMany([
 ]).then((data) => {
     console.log(data)
 })
+
+// Mongodb use a operaitonal buffering ... 
