@@ -61,14 +61,39 @@ const Employee = mongoose.model("Employee",userSchema) //employees collection na
 //     console.log(res,'findounedata')
 // })
 
-User.find({age:{$gt:20}})
-.then((res)=>{
-    console.log(res,'coparison data')
+// User.find({age:{$gt:20}})
+// .then((res)=>{
+//     console.log(res,'coparison data')
+// })
+
+// // one new method is find by id 
+
+// User.findById("697e34a68b26e68b3ed8f422")
+// .then((val)=>{
+//     console.log(val,'id-VALUE')
+// })
+
+
+// update one and update many 
+
+// User.updateOne({name:'MUK'},{age:40})
+// .then((updateVal)=>{
+//     console.log(updateVal,'updateagevalue')
+// })
+// User.findOne({name:"MUK"})
+// .then((res)=>{
+//     console.log(res)
+// })
+
+
+// updateMany
+
+User.updateMany({age:{$gte:40}},{age:55})
+.then((updateVal)=>{
+    console.log(updateVal,'updateagevalue')
 })
 
-// one new method is find by id 
-
-User.findById("697e34a68b26e68b3ed8f422")
-.then((val)=>{
-    console.log(val,'id-VALUE')
+User.find({age:55})
+.then((updateVal)=>{
+    console.log(updateVal,'updateagevalue')
 })
