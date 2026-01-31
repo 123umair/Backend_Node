@@ -88,12 +88,29 @@ const Employee = mongoose.model("Employee",userSchema) //employees collection na
 
 // updateMany
 
-User.updateMany({age:{$gte:40}},{age:55})
-.then((updateVal)=>{
-    console.log(updateVal,'updateagevalue')
-})
+// User.updateMany({age:{$gte:40}},{age:55})
+// .then((updateVal)=>{
+//     console.log(updateVal,'updateagevalue')
+// })
 
-User.find({age:55})
-.then((updateVal)=>{
-    console.log(updateVal,'updateagevalue')
+// User.find({age:55})
+// .then((updateVal)=>{
+//     console.log(updateVal,'updateagevalue')
+// })
+
+
+
+// findOneandUpdate method using 
+
+
+// User.findOneAndUpdate({name:"MUK"},{age:90},{new:true}) // here it will give the old document of age = 55 because it will first run the command findOne and after that its modified here if you give the option {new:true} then it will give the update document
+// .then((res)=>{
+//     console.log(res)
+// })
+
+
+
+User.findByIdAndUpdate('697b9f3b69cfd07cf3db7a85',{name:"developer"},{new:true})
+.then((res)=>{
+    console.log(res)
 })
