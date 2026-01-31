@@ -30,18 +30,45 @@ const Employee = mongoose.model("Employee",userSchema) //employees collection na
 
 
 // now here we can run  one command InsertMany that inser a multiple documents
-User.insertMany([
-    { name:"Tony", email:"tony@gmail.com", age:50},
-    { name:"UK", email:"uk@gmail.com", age:40},
-    { name:"MUK", email:"muk@gmail.com", age:30}
-]).then((data) => {
-    console.log(data)
-})
+// User.insertMany([
+//     { name:"Tony", email:"tony@gmail.com", age:50},
+//     { name:"UK", email:"uk@gmail.com", age:40},
+//     { name:"MUK", email:"muk@gmail.com", age:30}
+// ]).then((data) => {
+//     console.log(data)
+// })
 
-// Mongoose use a operaitonal buffering ... 
+// // Mongoose use a operaitonal buffering ... 
 //Operation buffering in Mongoose is a mechanism that queues model function calls (like find(), save(), insertMany(), etc.) internally until a successful connection to the MongoDB database has been established. 
 // This feature is designed for convenience, allowing developers to use their Mongoose models immediately in their code without explicitly waiting for the connection promise to resolve. Mongoose handles the asynchronous nature of the connection in the background. 
 // Key Aspects
 // Default Behavior: Buffering is enabled by default. Mongoose will store operations for a certain period if the database connection isn't ready.
 // Timeout: Operations will be buffered for a default time of 10,000ms (10 seconds). If the connection isn't established within this bufferTimeoutMS period, Mongoose will throw a timeout error, such as MongooseError: Operation users.find() buffering timed out after 10000ms.
 // Common Source of Confusion: This behavior can be confusing because the application might appear to start without errors, but operations later fail with a timeout if the underlying connection never succeeded (e.g., due to an incorrect database URI or network restrictions). 
+
+
+
+
+
+// Here most important concept is Models.find() is not return a promise but this is a thenable object (query object) that we can handle 
+// User.find({})
+// .then((res)=>{
+//     console.log(res,'ourdata')
+// })
+
+// User.findOne({name:"MUK", age:30})
+// .then((res)=>{
+//     console.log(res,'findounedata')
+// })
+
+User.find({age:{$gt:20}})
+.then((res)=>{
+    console.log(res,'coparison data')
+})
+
+// one new method is find by id 
+
+User.findById("697e34a68b26e68b3ed8f422")
+.then((val)=>{
+    console.log(val,'id-VALUE')
+})
