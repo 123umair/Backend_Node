@@ -33,7 +33,11 @@ const Employee = mongoose.model("Employee",userSchema) //employees collection na
 // User.insertMany([
 //     { name:"Tony", email:"tony@gmail.com", age:50},
 //     { name:"UK", email:"uk@gmail.com", age:40},
-//     { name:"MUK", email:"muk@gmail.com", age:30}
+//     { name:"MUK", email:"muk@gmail.com", age:30},
+//     { name:"XYZ", email:"muk@gmail.com", age:30},
+//     { name:"ABC", email:"ABC@gmail.com", age:85},
+//     { name:"MASEK", email:"MASEK@gmail.com", age:65},
+//     { name:"JOHN", email:"JOHN@gmail.com", age:60},
 // ]).then((data) => {
 //     console.log(data)
 // })
@@ -110,7 +114,41 @@ const Employee = mongoose.model("Employee",userSchema) //employees collection na
 
 
 
-User.findByIdAndUpdate('697b9f3b69cfd07cf3db7a85',{name:"developer"},{new:true})
+// User.findByIdAndUpdate('697b9f3b69cfd07cf3db7a85',{name:"developer"},{new:true})
+// .then((res)=>{
+//     console.log(res)
+// })
+
+// // Delete one method and DeleteMany 
+
+// User.deleteOne({name:"MUK"})
+// .then((res)=>{
+//     console.log(res,'1')   // so its will give the deletecoutnt 1 in output means the one items is deleted;.
+// })
+
+
+
+// Here also used the deleteMany
+
+// User.deleteMany({age:{$gte:40}})
+// .then((res)=>{
+//     console.log(res,'1')   
+// })
+
+// User.find()
+// .then((res)=>{
+//     console.log(res)
+// })
+
+
+// findByIdAndDelete
+// User.findByIdAndDelete({_id:'6980cf0483258d01b7d2aa23'})
+// .then((res)=>{
+//     console.log(res,'deleted')
+// })
+
+
+User.findOneAndDelete({name:"Tony"})
 .then((res)=>{
-    console.log(res)
+    console.log(res,'deleted')
 })
