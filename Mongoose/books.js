@@ -95,13 +95,26 @@ book3.save().then((res)=>{
 //     console.log(res,'detail')
 // })
 
-let book5 = new Book({
-    title:"Shar-e-iqbal",
-    author:"Faisal",
-    price:50,
-    category:"fiction"
+// let book5 = new Book({
+//     title:"Shar-e-iqbal",
+//     author:"Faisal",
+//     price:50,
+//     category:"fiction"
+// })
+
+// book5.save().then((res)=>{
+//     console.log(res,'detail')
+// })
+
+
+
+// Now schema validation types only working if we can insert these data if we can update these data than the schema validation is not working............. like that
+
+// here we can update it like that 
+Book.findByIdAndUpdate("698222d751c987ee3c8d5db6",{price:-2},{runValidators:true}) // so here it store -2 if we will given the validations type.. min:10
+// so here if we will allow the option [options.runValidators] «Boolean» if true, runs update validators on this command. Update validators validate the update operation against the model's schema
+
+.then((res)=>{
+    console.log(res)
 })
 
-book5.save().then((res)=>{
-    console.log(res,'detail')
-})
